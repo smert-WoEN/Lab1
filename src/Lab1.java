@@ -1,7 +1,4 @@
-import java.util.Arrays;
-
 import static java.lang.Math.*;
-import static java.lang.System.in;
 
 public class Lab1 {
     private final int longA = 7;
@@ -11,24 +8,28 @@ public class Lab1 {
     private long[] a = new long[longA];
     private double[] x = new double[longX];
     private double[][] b = new double[longA][longX];
+
     public void update() {
         inputArrayA();
         inputArrayX();
         inputArrayB();
         outArray();
     }
+
     private void inputArrayA() {
         int i = 0;
         for (i = 0; i < a.length; i++){
             a[i] = i * 2L + 6L;
         }
     }
+
     private void inputArrayX() {
         int i = 0;
         for (i = 0; i < x.length; i++) {
             x[i] = (Math.random()*((max-min)+1)) + min;
         }
     }
+
     private void inputArrayB() {
         int i = 0;
         for (i = 0; i < a.length; i++) {
@@ -46,12 +47,13 @@ public class Lab1 {
             }
         }
     }
+
     private void outArray(){
         int i = 0;
         for (i = 0; i < longA; i++) {
             int j = 0;
             for (j = 0; j < longX; j++) {
-                System.out.printf("%8.4f", b[i][j]);
+                System.out.printf("%12.4f", b[i][j]);
             }
             System.out.println();
         }
