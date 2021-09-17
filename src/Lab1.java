@@ -13,11 +13,9 @@ public class Lab1 {
     private double[][] b = new double[longA][longX];
     public void update() {
         inputArrayA();
-        System.out.println(Arrays.toString(a));
         inputArrayX();
-        System.out.println(Arrays.toString(x));
         inputArrayB();
-        System.out.println(Arrays.deepToString(b));
+        outArray();
     }
     private void inputArrayA() {
         int i = 0;
@@ -46,6 +44,16 @@ public class Lab1 {
                     b[i][j] = tan(pow(2.0 * 3.0 / atan(((x[j] - 4.0) / 2.0) * E + 1.0), sin(pow(x[j] / 2.0, x[j]))));
                 }
             }
+        }
+    }
+    private void outArray(){
+        int i = 0;
+        for (i = 0; i < longA; i++) {
+            int j = 0;
+            for (j = 0; j < longX; j++) {
+                System.out.printf("%8.4f", b[i][j]);
+            }
+            System.out.println();
         }
     }
 }
