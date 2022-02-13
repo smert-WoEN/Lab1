@@ -2,10 +2,12 @@ import static java.lang.Math.*;
 
 public class Lab1 {
     // Объявление и присовение значений объектам
-    private final int longA = 7;
+    private final int n = 6;
+    private final int k = 18;
+    public final int longA = (k - n + 1) / 2 + (n % 2 == 0 && k % 2 == 0 ? 1 : 0);
     private final int longX = 17;
-    private final double max = -14.0;
-    private final double min = 6.0;
+    private final double min = -14.0;
+    private final double max = 6.0;
     private long[] a = new long[longA];
     private double[] x = new double[longX];
     private double[][] A = new double[longA][longX];
@@ -16,7 +18,6 @@ public class Lab1 {
         inputArrayA1();
         outArray();
     }
-
     private void inputArrayA() { // Заполнение массива a (первого)
         int i = 0;
         for (i = 0; i < a.length; i++){
@@ -27,7 +28,10 @@ public class Lab1 {
     private void inputArrayX() {    // Заполнение массива b (второго)
         int i = 0;
         for (i = 0; i < x.length; i++) {
-            x[i] = (Math.random()*((max-min)+1)) + min;
+            x[i] = (random() * (max - min + 1)) + min;
+            if (x[i] >= 6.0) {
+                x[i] = 6.0;
+            }
         }
     }
 
